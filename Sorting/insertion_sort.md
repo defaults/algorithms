@@ -1,31 +1,35 @@
-Input : A sequence of number (a1, a2,.... an),
+**Input:** A sequence of number (a1, a2,.... an),
 
-Output : A permutation (reordering) (a1',a2',.... an')
+**Output:** A permutation (reordering) (a1',a2',.... an')
 
-Sudo code:
+**Sudo code:**
 
 for j = 2 to A.length
-    key = a[j]
+    key = A[j]
     i = j - 1
     while i > 0 and [i] > key
-        A[i + 1] = a[i]
+        A[i + 1] = A[i]
         i = i - 1
-        a[i + 1] = key
+    A[i + 1] = key
 
 
-Python Implementation:
+**Python Implementation:**
 
+```
 x = len(A)
 for j in range(2, x):
     key = A[j]
     i = j - 1
     while i > 0 and A[i] > key:
-        a[i + 1] = a[i]
-        i = i + 1
-        a[i + 1] = key
+        A[i + 1] = A[i]
+        i = i - 1
+    A[i + 1] = key
 
-Javascript Implementation:
+```
 
+**Javascript Implementation:**
+
+```
 var j = 2;
 var x = A.length;
 for(; j<=x; j++) {
@@ -33,7 +37,9 @@ for(; j<=x; j++) {
     var i = j + 1;
     while(i > 0 && A[i] > key) {
         A[i + 1] = A[i];
-        i += 1;
-        A[i + 1] = key;
+        i = i - 1;
     }
+    A[i + 1] = key;
 }
+
+```

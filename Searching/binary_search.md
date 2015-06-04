@@ -7,6 +7,7 @@ Sudo code:
 
 Python Implementation:
 
+```
 def binary_search(A, t):
     A.sort() //if arrary is not sorted
     low = 0
@@ -22,9 +23,11 @@ def binary_search(A, t):
 
     return False
 
+```
 
 Javascript Implementation:
 
+```
 function binary_search(A, t) {
     var low = 0;
     var high = A.length - 1;
@@ -40,3 +43,5 @@ function binary_search(A, t) {
     }
     return False;
 }
+
+```
