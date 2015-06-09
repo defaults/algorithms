@@ -1,17 +1,46 @@
-**Bubble sort** is a popular sorting algorithm which works by repeatedly *swapping adjacent elements* that are out of order.
+**Bubble sort** is a popular sorting algorithm which works by repeatedly *swapping adjacent elements* that are out of order. While asymptotically equivalent to the other O(n^{2}) algorithms, it will require O(n^{2}) swaps in the worst-case.
 
 **Sudo Code:**
 
+```
+Bubblesort( var a as array )
+    for i from 1 to N
+        for j from 0 to N - 1
+           if a[j] > a[j + 1]
+              swap( a[j], a[j + 1] )
+end
 
+```
 
 **Python Implementation**
 
 ```
+def bubblesort(A):
+    n = len(A)
+    for i in range(0,n):
+        for j in range(0,n-1):
+            if A[j] > a[j + 1]
+                a[j], a[j + 1] = a[j + 1], a[j]
+    return A
 
 ```
 
 **Javascript Implementation**
 
 ```
+function bubblesort(A) {
+    var n = A.lenght;
+    var temp;
+    for(int i = 0; i <= n; i ++) {
+        for (int j = 0; j < n, i ++) {
+            if (A[j] > a[j + 1]) {
+                temp = a[j];
+                a[j]=a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+    return A;
+}
 
 ```
