@@ -27,6 +27,7 @@ def sorting(a, b, size):
 		a[b + 1], a[size - 1] = a[size - 1], a[b + 1]
 		b += 1
 		size -= 1
+	return a
 
 def laxical(a):
 	size = len(a)
@@ -39,7 +40,7 @@ def laxical(a):
 		for i in xrange(size-2,-2,-1):
 			if a[i] < a[i + 1]:
 				break
-				
+
 		if i == -1:
 			break
 
