@@ -19,8 +19,8 @@ def bubblesort(A):
     n = len(A)
     for i in range(0,n):
         for j in range(0,n-1):
-            if A[j] > a[j + 1]:
-                a[j], a[j + 1] = a[j + 1], a[j]
+            if A[j] > A[j + 1]:
+                A[j], A[j + 1] = A[j + 1], A[j]
     return A
 
 ```
@@ -33,10 +33,10 @@ function bubblesort(A) {
     var temp;
     for(int i = 0; i <= n; i ++) {
         for (int j = 0; j < n, i ++) {
-            if (A[j] > a[j + 1]) {
-                temp = a[j];
-                a[j]=a[j + 1];
-                a[j + 1] = temp;
+            if (A[j] > A[j + 1]) {
+                temp = A[j];
+                A[j] = A[j + 1];
+                A[j + 1] = temp;
             }
         }
     }
