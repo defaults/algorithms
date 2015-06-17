@@ -59,7 +59,7 @@ function quick(A, p, r) {
     }
 }
 
-def partition(A, p , r) {
+function partition(A, p , r) {
     var x = a[r];
     var i = p - 1;
     var j;

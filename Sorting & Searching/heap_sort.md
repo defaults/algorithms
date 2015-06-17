@@ -65,6 +65,8 @@ def heapify(A, i, j):
 	if max != i:
 		A[i], A[max] = A[max], A[i]
 		heapify(A, max, j)
+        A[i, A] = A[x]
+
 
 ```
 
