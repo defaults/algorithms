@@ -33,16 +33,16 @@ def insertionsort(A):
 **Javascript Implementation:**
 
 ```
-var j = 2;
-var x = A.length;
-for(; j<=x; j++) {
-    var key = A[j];
-    var i = j + 1;
-    while(i > 0 && A[i] > key) {
-        A[i + 1] = A[i];
-        i = i - 1;
+function insertionsort)(A) {
+    var x = A.length;
+    for(var j = 1; j < x; j++) {
+        var key = A[j];
+        var i = j + 1;
+        while(i > -1 && A[i] > key) {
+            A[i + 1] = A[i];
+            i = i - 1;
+        }
+        A[i + 1] = key;
     }
-    A[i + 1] = key;
 }
-
 ```
