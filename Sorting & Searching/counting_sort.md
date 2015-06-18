@@ -24,39 +24,42 @@ Counting-Sort(A, B, k):
 **Python Implementation:**
 
 ```
-def countingsort(A, B, k):
-    C = [0]
-    n = len(A)
-    for j in range(0,n):
-        c[A[j]] += 1
+def countingsort(A, k):
+	n = len(A)
+	B = [0]*(n)
+	C = [0]*(k+1)
 
-    for i in range(0, k):
-        C[i] = C[i] + C[i - 1]
+	for j in range(0,n):
+		C[A[j]] += 1
 
-    for j in range(n,0):
-        B[C[A[j]]] = A[j]
-        C[A[j]] = C[A[j]] - 1
+	for i in range(1, k+1):
+		C[i] += C[i - 1]
 
-    return A
+	for j in xrange(n-1, -1, -1):
+		B[C[A[j]] -  1] = A[j]
+		C[A[j]] -= 1
+
+	return B
 ```
 
 **Javascript Implementation:**
 
 ```
-function countingsort(A, B, k) {
-    var C = [0];
+function countingsort(A, k) {
     var n = len(A);
+    var B[n];
+    var C[k + 1];
     for (int j = 0; j < n; j++) {
         c[A[j]] += 1;
     }
 
     for (int i = 0; i < k; i ++) {
-        C[i] = C[i] + C[i - 1];
+        C[i] += C[i - 1];
     }
 
-    for (int j = n; j < 0; j--) {
-        B[C[A[j]]] = A[j];
-        C[A[j]] = C[A[j]] - 1;
+    for (int j = n-1; j <= 0; j--) {
+        B[C[A[j]] - 1] = A[j];
+        C[A[j]] -= 1;
     }
     return A;
 }
