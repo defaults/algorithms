@@ -6,6 +6,19 @@
 
 **Combine:** Combine the two sorted subsequences to produce the answer.
 
+Time complexity:
+        Best : O(n log(n))
+        Average : O(n log(n))
+        Worst : O(n log(n))
+
+Space complexity: O(n)
+
+Algorithmic Paradigm: Divide and Conquer
+
+Sorting In Place: No in a typical implementation
+
+Stable: Yes
+
 
 **Sudo Code:**
 

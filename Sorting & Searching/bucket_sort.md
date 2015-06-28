@@ -1,8 +1,14 @@
-**Bucket Sort** assumes that the input is drawn from a uniform distribution and has an average-case running time of **O(n)**
+**Bucket Sort** assumes that the input is drawn from a uniform distribution and has an average-case running time of O(n).
 
 This code assumes that the input is a n element array A and that each element A[i] in the array satisfies 0 <= A[i] < 1.
 The code requires and auxiliary array B[0...n-1] of linked list (buckets) and assumens that there is a mahanism for maintaining hat list.
 
+Time complexity:
+        Best : O(n + k)
+        Average : O(n + k)
+        Worst : O(n^2)
+
+Space complexity: O(n)
 
 **Psudo code:**
 
@@ -24,6 +30,10 @@ Bucket-Sort(A)
 **Python Implementation:**
 
 ```
+def  bucketsort(A):
+    n = len(A)
+
+    for i in range(0, n):
 
 
 ```

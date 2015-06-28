@@ -1,4 +1,7 @@
-**Counting Sort** assumes that each of the n input elements in a integer in the range 0 to k for some integer k. When k = O(n) time.
+**Counting Sort** assumes that each of the n input elements in a integer in the range 0 to k for some integer k. When k = O(n) time. It is often used as a sub-routine to another sorting algorithm like radix sort.
+
+Time Complexity: O(n+k) where n is the number of elements in input array and k is the range of input.
+Auxiliary Space: O(n+k)
 
 **Psudo Code**
 

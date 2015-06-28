@@ -1,3 +1,13 @@
+**Quick sort algorithm** follows the **divide-and-cinquer** paradigm.
+
+Algorithmic Paradigm: Divide and Conquer
+
+Time complexity:
+        Best : O(n log(n))
+        Average : O(n log(n))
+        Worst : O(n^2)
+
+Space complexity: O(log(n))
 
 **Psudo Code:**
 
@@ -33,7 +43,7 @@ def partition(A, p , r):
 	i = p - 1
 	for j in range(p,r):
 		if A[j] <= x:
-			i = i + 1
+			i += 1
 			A[i], A[j] = A[j], A[i]
 	A[i + 1], A[r] = A[r], A[i + 1]
 	return i + 1

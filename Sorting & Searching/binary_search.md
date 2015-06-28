@@ -2,10 +2,11 @@ Input : A sorted sequence of number (a1, a2,.... an) and the target value that h
 
 Output : the index of the target value
 
+Time complexity : O(log n)
 
 Sudo code:
 
-Python Implementation:
+**Python Implementation:**
 
 ```
 def binary_search(A, t):
@@ -25,7 +26,7 @@ def binary_search(A, t):
 
 ```
 
-Javascript Implementation:
+**Javascript Implementation:**
 
 ```
 function binary_search(A, t) {

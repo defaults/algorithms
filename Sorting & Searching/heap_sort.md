@@ -1,5 +1,12 @@
 **Heap sort** is an efficient sorting algorithm implemented with the heap data structure.
 
+Time complexity:
+        Best : O(n log(n))
+        Average : O(n log(n))
+        Worst : O(n log(n))
+
+Space complexity: O(1)
+
 Psudo Code:
 
 ```
