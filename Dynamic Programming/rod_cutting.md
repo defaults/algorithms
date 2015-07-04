@@ -2,7 +2,7 @@
 
 Gicven a rod of length n and  table of prices Pi for i = 1, 2, 3, ... n, determine the maximum revenue obtanmable by cutting the rod the selling the pieces.
 
-**Reccursive top-down approch**
+**Reccursive top-down approach**
 
 p is price table eg. p[1, 5, 7, 9, 10, 13....n]
 n is length of rod to be cut
