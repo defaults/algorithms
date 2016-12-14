@@ -37,7 +37,7 @@ def topdowncut(p, n, r):
 		return r[n]
 	if n < 0:
 		return 0
-	else:a
+	else:
 		q = -1
 		for i in range(0,n + 1):
 			q = max(q, p[i] + topdowncut(p, n - i - 1, r ))

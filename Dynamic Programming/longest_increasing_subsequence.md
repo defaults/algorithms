@@ -13,7 +13,7 @@ def lis(a):
 			if a[i] > a[j] and lis[i] < lis[j] + 1:
 				lis[i] = lis[j] + 1
 
-	maximun = max(lis)
-	return maximun
+	maximum = max(lis)
+	return maximum
 
 ```
