@@ -75,6 +75,33 @@ class LinkedList:
         prev.next = temp.next
         temp = None
 
+    # Given a reference to the head of a list and a position, delete the node at a given position
+    def deleteNode(self, position):
+        self.head = temp
+
+        if temp == None:
+            return
+
+        if position == 0:
+            self.head = temp.next
+            temp  = None
+
+        for i in xrange(position - 1):
+            temp = temp.next
+            if temp == None:
+                return
+
+        # return in case of previous node or node to be deleted be none
+        if temp == None:
+            return
+        if temp.next == None
+            return
+
+        next = temp.next.next
+
+        temp.next = None
+        temp.next = next
+
     # This function prints contents of linked list
     # starting from head
     def printList(self):
