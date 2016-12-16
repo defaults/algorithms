@@ -17,6 +17,7 @@ class Node:
         self.data = data  # Assign data
         self.next = None  # Initialize next as null
 
+
 # Linked List class
 class LinkedList:
 
@@ -24,33 +25,55 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    # This function prints contents of linked list
-    # starting from head
-    def printList(self):
+    def push(self, data):
+        new_node = Node(data)
+        new_node.data = data
+        new_node.next = self.head
+        self.head = new_node
+
+    def append(self, data):
+        # If the Linked List is empty, then make the new node as head
+        if self.head is None:
+            self.head = new_node
+            return
+
+        # Else traverse till the last node
+        last = self.head
+        while (last.next):
+        last = last.next
+
+        # Change the next of last node
+        last.next =  new_node
+
+    def insert_after(self, pre_node, new_data):
+        if pre_node is None:
+            print(given previous node must be LinkedList)
+            return
+
+        new_node = Node(new_data)
+        new_node.next = pre_node.next
+        pre_node.next = new_node
+
+    def delete_node(self, key):
         temp = self.head
-        while (temp):
-            print temp.data,
+
+
+        if temp.data == key:
+            self.head = temp.next
+            temp = None
+            return
+
+        while(temp is not None):
+            if(temp.data == key):
+                break
+            prev = temp
             temp = temp.next
 
+        if temp == None:
+        return
 
-# Creating a simple LinkedList
-# A simple Python program for traversal of a linked list
-
-# Node class
-class Node:
-
-    # Function to initialise the node object
-    def __init__(self, data):
-        self.data = data  # Assign data
-        self.next = None  # Initialize next as null
-
-
-# Linked List class contains a Node object
-class LinkedList:
-
-    # Function to initialize head
-    def __init__(self):
-        self.head = None
+        prev.next = temp.next
+        temp = None
 
     # This function prints contents of linked list
     # starting from head
@@ -64,16 +87,16 @@ class LinkedList:
 # Code execution starts here
 if __name__=='__main__':
     # Start with the empty list
-    llist = LinkedList()
+    l_list = LinkedList()
 
-    llist.head  = Node(1)
-    second = Node(2)
-    third  = Node(3)
+    l_list.push(5)
+    l_list.push(2)
+    l_list.append(6)
+    l_list.push(1)
 
-    llist.head.next = second; # Link first node with second
+    print 'Printing LinkedList:', l_list.printList()
 
-    second.next = third;
-
+    # Printing LinkedList: 1 2 5 6
 ```
 
 *C++ Implementation:*
