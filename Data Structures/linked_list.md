@@ -40,7 +40,7 @@ class LinkedList:
         # Else traverse till the last node
         last = self.head
         while (last.next):
-        last = last.next
+            last = last.next
 
         # Change the next of last node
         last.next =  new_node
@@ -101,6 +101,19 @@ class LinkedList:
 
         temp.next = None
         temp.next = next
+
+    #reverse a LinkedList
+    def reverse_list(self):
+        current_node = self.head
+        prev_node = None
+
+        while(current_node):
+            next_node = current_node.next
+            current_node.next = prev_node
+            prev_node = current_node
+            temp = next_node
+
+        self.head = prev_node
 
     # This function prints contents of linked list
     # starting from head
