@@ -1,7 +1,4 @@
 class Graph:
-
-    DEFAULT_WEIGHT = 1
-
     def __init__(self, graph_dict=None):
         """initializes a graph object"""
         if graph_dict is None:
@@ -30,7 +27,7 @@ class Graph:
 
         return graph_edges
 
-    def add_edge(self, edge, weight=DEFAULT_WEIGHT):
+    def add_edge(self, edge):
         u, v = set(edge)
         if u not in self.__graph_dist:
             self.__graph_dist[u] = v
@@ -61,12 +58,6 @@ class Graph:
             for edge in self.__graph_dist[vertex]:
                 self.delete_edge((vertex, edge))
             del self.__graph_dist[vertex]
-
-#    def set_edge_weight(self, edge):
-#        u, v = set(edge)
-#
-#    def get_edge_weight(self, edge):
-#        pass
 
     def find_path(self, start_vertex, end_vertex, path=None):
         if path is None:
