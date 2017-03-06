@@ -9,7 +9,7 @@ class Graph:
         self.__graph_dist = graph_dict
 
     def __str__(self):
-        return "Undirected Graph \nNodes: %s \nEdges: %s" % (
+        return "Undirected weighted Graph \nNodes: %s \nEdges: %s" % (
             self.list_vertices(), self.list_edges())
 
     def graph(self):
