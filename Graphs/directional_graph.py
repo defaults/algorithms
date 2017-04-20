@@ -124,8 +124,8 @@ if __name__ == "__main__":
     print(graph.has_edge(("a", "c")))
     print(graph.graph())
 
-    print("\nDeleting edge (a, c):")
-    graph.delete_edge(("a", "c"))
+    print("\nDeleting edge (a, d):")
+    graph.delete_edge(("a", "d"))
     print(graph.list_edges())
     print (graph.list_vertices())
     print(graph.graph())

@@ -24,9 +24,22 @@ Linked List to be flattened to
 ```
 def flatten_linkedlist(object):
 
+# Node class                                                                                                           
 class Node:
 
+    # Function to initialize the node object
+    def __init__(self, data):
+        self.data = data  # Assign data
+        self.next = None  # Initialize next as null
+        self.child = None
+
+    def create_multilevel_list
+
+
+# Linked List class
+class LinkedList:
+
+    # Function to initialize the Linked List object
     def __init__(self):
-        self.data = None
-        self.next = None
+    pass
 ```
