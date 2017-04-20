@@ -50,6 +50,69 @@ def partition(A, p , r):
 
 ```
 
+**C++ Implementation**
+
+```
+#include "iostream"
+
+void swap(int* a, int* b)
+{
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+int partition(int arr[], int lo, int hi)
+{
+    int pivot = arr[hi];
+    int i = lo - 1;
+    for(int j=lo; j<hi; j++)
+    {
+        if(arr[j] <= pivot)
+        {
+            i += 1;
+             swap(&arr[i], &arr[j]);
+        }
+            
+    }
+
+    swap(&arr[i + 1], &arr[hi]);
+
+    return (i + 1);
+}
+
+void quick_sort(int arr[], int lo, int hi)
+{
+    if(lo < hi)
+    {
+        int pi = partition(arr, lo, hi);
+        
+        quick_sort(arr, lo, pi - 1);
+        quick_sort(arr, pi + 1, hi);	
+    }
+}
+    
+/* Function to print an array */
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i=0; i < size; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+    
+int main()
+{
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    quick_sort(arr, 0, n-1);
+    printf("Sorted array: \n");
+    printArray(arr, n);
+    return 0;
+}
+
+```
+
 **Javascript Implementation:**
 
 ```

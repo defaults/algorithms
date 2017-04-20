@@ -5,6 +5,8 @@ Time complexity:
         Average : O(n^2)
         Worst : O(n^2)
 
+        It can be optimized by stopping the algorithm if inner loop didn’t cause any swap.
+
 Space complexity: O(1)
 
 
@@ -26,7 +28,7 @@ end
 def bubblesort(A):
     n = len(A)
     for i in range(0,n):
-        for j in range(0,n-1):
+        for j in range(0,n - 1 - i):
             if A[j] > A[j + 1]:
                 A[j], A[j + 1] = A[j + 1], A[j]
     return A
@@ -39,8 +41,8 @@ def bubblesort(A):
 function bubblesort(A) {
     var n = A.lenght;
     var temp;
-    for(int i = 0; i <= n; i ++) {
-        for (int j = 0; j < n, i ++) {
+    for(int i = 0; i < n; i ++) {
+        for (int j = 0; j < n - i, i ++) {
             if (A[j] > A[j + 1]) {
                 temp = A[j];
                 A[j] = A[j + 1];
