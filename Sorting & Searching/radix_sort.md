@@ -47,3 +47,7 @@ def redix(A):
 	return A
 
 ```
+
+**C++ Implementation**
+```
+```
