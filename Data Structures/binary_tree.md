@@ -11,6 +11,12 @@ class Node:
 class BinaryTree:
 	def __init__(self):
 		self.root = None
+
+	def _height(node):
+		if node == None:
+			return 0
+
+		return max(height(node.left), height(node.right)) + 1
 		
 	def _search(self, root, value):
 		if root.val == value:
@@ -33,7 +39,7 @@ class BinaryTree:
 		print root.val
 		self.inorder_traversal(root.right)
 		
-	def preorder_travarsal(self):
+	def preorder_travarsal(self, root):
 		if root == None:
 			return
 
@@ -41,7 +47,7 @@ class BinaryTree:
 		self.inorder_traversal(root.left)
 		self.inorder_traversal(root.right)
 		
-	def postorder_travarsal(self):
+	def postorder_travarsal(self, root):
 		if root == None:
 			return
 
@@ -49,10 +55,18 @@ class BinaryTree:
 		self.inorder_traversal(root.right)
 		print root.val
 		
-	def levelorder_travarsal(self):
-		if root == None:
+	def levelorder_travarsal(self, root):
+		h = height(root)
+		for i in xrange(h):
+			self._print_level(root, i)
+
+	def _print_level(self, node, level):
+		if node == None:
 			return
-		print root.val
-		self.inorder_traversal(root.left)
-		self.inorder_traversal(root.right)
+
+		if level == 0:
+			print node.data
+		elif level > 0:
+			self.print_level(node.left, level - 1)
+			self.print_level(node.right, level - 1)
 ```
