@@ -33,6 +33,7 @@ def BFS(Graph, s):
     visited = set([s])
     while len(q) != 0:
         node = q.popleft()
+        print graph
         for each in graph[node]:
             print visited
             if each not in visited:
@@ -91,4 +92,5 @@ if __name__ == "__main__":
     graph.set_edge_weight(("c", "e"), 2)
     print(graph.graph())
 
+    print '\n'
     print (BFS(graph, 'e'))
