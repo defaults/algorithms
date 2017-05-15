@@ -21,7 +21,6 @@ def dfs_util(graph, start, visited):
 		if i not in visited:
 			dfs_util(graph, i, visited)
 
-
 if __name__ == "__main__":
 
 	g = {

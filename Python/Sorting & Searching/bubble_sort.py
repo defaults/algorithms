@@ -6,8 +6,7 @@ Time complexity:
         Average : O(n^2)
         Worst : O(n^2)
 
-        It can be optimized by stopping the algorithm if inner loop didn’t cause any swap.
-
+It can be optimized by stopping the algorithm if inner loop did not cause any swap.
 Space complexity: O(1)
 
 Sudo Code:
