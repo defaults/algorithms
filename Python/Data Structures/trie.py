@@ -49,8 +49,13 @@ class Trie:
 
 		return current_node != None and current_node.is_leaf
 
+	def _delete_helper(self, root, word, length):
+		if root:
+			
+
 	def delete(self, word):
-		pass
+		if len(word) > 0:
+			return self._delete_helper(self, self.root, word, length)
 
 	def start_with_prefix(self, prefix):
 		pass
