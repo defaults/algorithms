@@ -65,22 +65,22 @@ if p < r
 
 """
 
-// Function to merge the two haves A[p..q] and A[q+1..r] of array A[]
+# Function to merge the two haves A[p..q] and A[q+1..r] of array A[]
 def merge(A, p, q, r):
 	n1 = q - p + 1
 	n2 = r - q
 
-    // create temp arrays
+    # create temp arrays
 	L = [0]*n1
 	R = [0]*n2
 
-    // Copy data to temp arrays L[] and R[]
-	for i in range(0, n1):
+    # Copy data to temp arrays L[] and R[]
+	for i in range(n1):
 		L[i] = A[p + i]
-	for j in range(0, n2):
+	for j in range(0,n2):
 		R[j] = A[q + j + 1]
 
-    // Merge the temp arrays back into A[p..r]
+    # Merge the temp arrays back into A[p..r]
 	i = 0
 	j = 0
 	k = p
@@ -96,23 +96,26 @@ def merge(A, p, q, r):
 		k +=1
 
 
-    // Copy the remaining elements of L[], if there are any
+    # Copy the remaining elements of L[], if there are any
 	while (i < n1):
 		A[k] = L[i]
 		i +=1
 		k += 1
 
-    // Copy the remaining elements of R[], if there are any
+    # Copy the remaining elements of R[], if there are any
 	while (j < n2):
 		A[k] = R[j]
 		j += 1
 		k += 1
 
-// p is for left index and r is right index of the sub-array
-  of array A[] to be sorted
+# p is for left index and r is right index of the sub-array of array A[] to be sorted
 def mergesort(A, p, r):
 	if p < r:
-		q = p + (r - p) / 2      // //Same as (l+r)/2, but avoids overflow for large l and h
+		q = p + (r - p) / 2      # Same as (l+r)/2, but avoids overflow for large l and h
 		mergesort(A, p, q)
 		mergesort(A, q+1, r)
 		merge(A, p, q, r)
+
+arr = [3,5,3,2,6,7,8,33,1,44]
+mergesort(arr, 0, len(arr) - 1)
+print arr
