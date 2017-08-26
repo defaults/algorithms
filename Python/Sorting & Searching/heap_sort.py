@@ -42,6 +42,7 @@ Heapify(A as array, i as int)
 def heapsort(A):
 	j = len(A) - 1
 	buildheap(A, j)
+
 	for i in range(j,0,-1):
 		A[0], A[i] = A[i], A[0]
 		j -= 1
@@ -68,4 +69,7 @@ def heapify(A, i, j):
 	if max != i:
 		A[i], A[max] = A[max], A[i]
 		heapify(A, max, j)
-        A[i, A] = A[x]
+
+        
+a = [3,2,5,7,12,76,33,21]
+heapsort(a)
