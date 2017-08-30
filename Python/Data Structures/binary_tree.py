@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 class Node:
 	def __init__(self, key):
 		self.val = key
@@ -34,6 +36,9 @@ class BinaryTree:
 		self.inorder_traversal(root.left)
 		print root.val
 		self.inorder_traversal(root.right)
+
+	def inorder_traversal_iterative(self, root):
+		pass
 		
 	def preorder_travarsal(self, root):
 		if root == None:
@@ -42,6 +47,9 @@ class BinaryTree:
 		print root.val
 		self.inorder_traversal(root.left)
 		self.inorder_traversal(root.right)
+
+	def preorder_travarsal_iterative(self, root):
+		pass
 		
 	def postorder_travarsal(self, root):
 		if root == None:
@@ -50,6 +58,9 @@ class BinaryTree:
 		self.inorder_traversal(root.left)
 		self.inorder_traversal(root.right)
 		print root.val
+
+	def postorder_travarsal_iterative(self, root):
+		pass
 		
 	def levelorder_travarsal(self, root):
 		h = height(root)
@@ -65,3 +76,6 @@ class BinaryTree:
 		elif level > 0:
 			self.print_level(node.left, level - 1)
 			self.print_level(node.right, level - 1)
+
+	def levelorder_travarsal_iterative(self, root):
+		pass
