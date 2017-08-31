@@ -32,8 +32,7 @@ def BFS(Graph, s):
     q = deque([s])
     visited = set([s])
     while len(q) != 0:
-        node = q.popleft()
-        print graph
+        node = q.pop()
         for each in graph[node]:
             print visited
             if each not in visited:
