@@ -29,7 +29,6 @@ class Trie:
 
 	def insert(self, word):
 		current_node = self.head
-
 		for i in xrange(len(word)):
 			index = self._chartoindex(word[i])
 			if not current_node.children.has_key(index):
@@ -49,17 +48,40 @@ class Trie:
 
 		return current_node != None and current_node.is_leaf
 
-	def _delete_helper(self, root, word, length):
+	def _delete_helper(self, word, length):
 		if root:
+			pass
 			
 
 	def delete(self, word):
 		if len(word) > 0:
-			return self._delete_helper(self, self.root, word, length)
+			return self._delete_helper(self, word, length)
+			
+	def get_word_from_node(self, current_node, result, prefix):
+		if current_node.is_leaf:
+			result.append(prefix)
+		else:
+			for val, node in current_node.children.items():
+				self.get_word_from_node(node, result, prefix + chr(val + ord('A')))
+
 
 	def start_with_prefix(self, prefix):
-		pass
+		current_node  = self.head
 
+		for i in xrange(len(prefix)):
+			index = self._chartoindex(prefix[i])
+			if index in current_node.children:
+				current_node = current_node.children[index]
+			else:
+				return None
+
+		print [chr(x + ord('A')) for x in current_node.children.keys()]
+		result = []
+		
+		for val, node in current_node.children.items():
+			self.get_word_from_node(node, result, prefix + chr(val + ord('A')))
+
+		print result
 
 if __name__ == "__main__":
 	states = """
@@ -119,3 +141,4 @@ if __name__ == "__main__":
 		trie.insert(state)
 		
 	print trie.search('california')
+	trie.start_with_prefix('t')
