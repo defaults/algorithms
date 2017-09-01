@@ -16,7 +16,6 @@ Maximum(A)
 ExtractMax(A)
     if A.size < 1
         error 'heap underflow'
-
     max = A[1]
     A[1] = A[A.size]
     A.size = A.size - 1
