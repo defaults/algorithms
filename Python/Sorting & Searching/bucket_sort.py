@@ -29,6 +29,22 @@ Bucket-Sort(A)
 
 def  bucketsort(A):
     n = len(A)
+    buckets = [[] for i in xrange(n)]
 
-    for i in range(0, n):
+    for i in range(n):
+        bi = n * A[i]
+        buckets[int(bi)].append(A[i])
+
+    for i in xrange(n):
+        buckets[i].sort()
+
+    index = 0
+    for i in xrange(n):
+        for j in xrange(len(buckets[i])):
+            A[index] = buckets[i][j]
+            index += 1
+    print buckets
+    return A
+
+print bucketsort([0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434])
 

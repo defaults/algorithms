@@ -18,28 +18,29 @@ for i = 1 to d
 """
 
 def countsort(A, n, exp):
-	B = [0]*n
-	C = [0]*10
+    B = [0]*n
+    C = [0]*10
 
-	for i in range(0,n):
-		C[(A[i]/exp) % 10] += 1
+    for i in range(0, n):
+        C[(A[i] / exp) % 10] += 1
 
-	for i in range(1,10):
-		C[i] += C[i - 1]
+    for i in range(1,10):
+        C[i] += C[i - 1]
 
-	for i in range(n-1, -1, -1):
-		B[C[ (A[i]/exp) % 10] - 1] = A[i]
-		C[ (A[i]/exp) % 10] -= 1
+    for i in range(n-1, -1, -1):
+        B[C[ (A[i] / exp) % 10] - 1] = A[i]
+    C[ (A[i] / exp) % 10] -= 1
 
-	for i in range(0,n):
-		A[i] = B[i]
+    for i in range(0,n):
+        A[i] = B[i]
 
 
 def redix(A):
-	n = len(A)
-	mx = max(A)
+    mx = max(A)
 
-	for exp in range(0,n):
-		countsort(A, n, exp)
+    exp = 1
+    while mx/exp > 0:
+        countsort(A, n, exp)
+        exp *= 10
 
-	return A
+    return A

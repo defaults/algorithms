@@ -6,35 +6,36 @@ Time Complexity: The algorithm is simply DFS with an extra stack. So time comple
 
 from collections import defaultdict
 
+
 class Graph:
-	def __init__(self, vertices):
-		self.graph = defaultdict(set)
-		self.V = vertices
+    def __init__(self, vertices):
+        self.graph = defaultdict(set)
+        self.V = vertices
 
-	def add_edge(self, u, v):
-		self.graph[u].add(v)
+    def add_edge(self, u, v):
+        self.graph[u].add(v)
 
-	def _topological_sort_util(self, vertex, visited, stack):
-		visited[vertex] = True
-		print vertex
-		print '\n'
-		for i in self.graph[vertex]:
-			if visited[i] is False:
-				self._topological_sort_util(i, visited, stack)
+    def _topological_sort_util(self, vertex, visited, stack):
+        visited[vertex] = True
+        print vertex
+        print '\n'
+        for i in self.graph[vertex]:
+            if visited[i] is False:
+                self._topological_sort_util(i, visited, stack)
 
-		print 'here' + str(vertex)
-		stack.insert(0, vertex)
+        print 'here' + str(vertex)
+        stack.insert(0, vertex)
 
-	def topological_sort(self):
-		visited = [False] * self.V
-		stack = []
+    def topological_sort(self):
+        visited = [False] * self.V
+        stack = []
 
-		print self.graph.items(), self.V
-		for each in self.graph.keys():
-			if visited[each] is False:
-				self._topological_sort_util(each, visited, stack)
+        print self.graph.items(), self.V
+        for each in self.graph.keys():
+            if visited[each] is False:
+                self._topological_sort_util(each, visited, stack)
 
-		return stack
+        return stack
 
 
 g = Graph(6)

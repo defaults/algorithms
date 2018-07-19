@@ -14,7 +14,7 @@ The number of comparisons in best case is O(n).
 The worst case of Naive Pattern Searching occurs in following scenarios.
 
 1) When all characters of the text and pattern are same.
-	txt[] = "AAAAAAAAAAAAAAAAAA"
+    txt[] = "AAAAAAAAAAAAAAAAAA"
 	pat[] = "AAAAA"
 
 2) Worst case also occurs when only the last character is different.
@@ -24,20 +24,20 @@ The worst case of Naive Pattern Searching occurs in following scenarios.
 Number of comparisons in worst case is O(m*(n-m+1))
 """
 
+
 def search(pattern, text):
-	m = len(pattern)
-	n = len(text)
+    m = len(pattern)
+    n = len(text)
 
-	for i in xrange(n - m + 1):
-		for j in xrange(m):
-			if text[i + j] != pattern[j]:
-				break
+    for i in xrange(n - m + 1):
+        for j in xrange(m):
+            if text[i + j] != pattern[j]:
+                break
 
-			if j == m - 1:
-				print("Pattern found at index: " + str(i))
+            if j == m - 1:
+                print("Pattern found at index: " + str(i))
 
 
 txt = "AABAACAADAABAAABAA"
 pat = "AABA"
 search(pat, txt)
-	

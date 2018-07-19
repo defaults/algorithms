@@ -25,18 +25,18 @@ Counting-Sort(A, B, k):
 """
 
 def countingsort(A, k):
-	n = len(A)
-	B = [0]*(n)
-	C = [0]*(k+1)
+    n = len(A)
+    B = [0]*(n)
+    C = [0]*(k+1)
 
-	for j in range(0,n):
-		C[A[j]] += 1
+    for j in range(0,n):
+        C[A[j]] += 1
 
-	for i in range(1, k+1):
-		C[i] += C[i - 1]
+    for i in range(1, k+1):
+        C[i] += C[i - 1]
 
-	for j in xrange(n-1, -1, -1):
-		B[C[A[j]] -  1] = A[j]
-		C[A[j]] -= 1
+    for j in xrange(n-1, -1, -1):
+        B[C[A[j]] -  1] = A[j]
+        C[A[j]] -= 1
 
-	return B
+    return B
